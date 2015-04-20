@@ -1,0 +1,113 @@
+<!DOCTYPE html> <!-- 전체 html 문서에 대한 버전이다. html5부터는 버전에 대한 개념을 없애고 이 코드만 작성하면 최신버전에 대한 것을 적용시킨다. -->
+<html> 			<!-- 태그, head와 body를 감싸고 있는 '부모'이다. -->
+	<head> 		<!-- 같은 선상에 있는 head와 body는 '자식이면서 형제관계'이다.-->
+		<title>Orange</title>
+		<style>
+			body{ /* 태그 선택자라고 한다, command + / 는 자동주석!! */ 
+				  /* 속성 : 값 */
+				background-image: url(images/bg.png);
+			}
+			div{
+				background-color: white;  	/* command + e 누르면 색을 선택할 수 있다. */
+				
+				width: 350px; 			  	/* default 값은 auto이다. 부모를 따라간다 */
+/*				height: 100px; div내부의 contents만큼 높이를 가진다. 유지보수 차원에서 값을 잘 지정하지 않는다. */
+/*				align은 왼쪽, 가운데, 오른쪽으로만 지정할 수 있다. 
+				하지만 div는 어디든 움직일 수 있어야 하기 때문에 align 속성은 해당되지 않는다. */
+				
+				/* margin은 바깥쪽 여백*/
+				margin-top: 50px;
+				
+				/* 가운데 정렬 width,height경우 따로 적지않으면 auto지만 margin은 적지않으면 0이 default값이다. */
+				
+/*				margin-left: auto;  auto는 내가 줄 수 있는 만큼 주겠다라는 뜻이다 */
+/*				margin-right: auto; 아래의 한줄과 동일하다. margin:상하 좌우, margin 상 좌우 하, margin:상 우 하 좌(시계방향)*/
+				margin: 30px auto;
+				
+/* 				padding은 안쪽 여백*/
+				padding: 30px; 
+/* 				top,bottom,left,right의 값이 모두 30px로 동일하게 적용이 됐다. 전체 너비의 크기는 350+30+30=410이 된다. */
+				
+				border-top: 2px solid #faee62;
+				border-bottom: 70px solid #faee62;
+/* 				단축속성, 위와 동일한 방법
+				border-width: 5px;  테두리의 두께 
+				border-style: solid;
+				border-color: orange;
+				*/
+				color:orange;
+				text-align: center; /* 이미지가 가운데 정렬이 된다. 왜냐? 이미지는 텍스트와 동일하게 컨텐츠 그 자체이기 때문! */
+			}
+			
+			h1{
+/*				자기 자신은 그대로 있되 안에 있는 컨텐츠만 가운데 정렬 시키는 것이 text-algin 이다*/
+				background-color: #fdffe1;
+				color: orange;
+				border-bottom: 3px solid #ffd214;
+				border-radius: 5px; /* css3 태그, 호환성 문제가 있기 때문에 주의해서 사용해야한다. */ 
+				padding: 10px;
+			}
+			div.kiwi { /* 선택자는 생략이 가능하다. 생략 가능히 *.kiwi로 어디든 사용이 가능하다. */
+				color:green;
+				border-top: 2px solid #75ff1f;
+				border-bottom: 70px solid #bef87a;	
+			}
+			div.kiwi h1{ /* 자식 선택자라고 부른다. */
+				color: green;
+				background-color: #e6ffe6;
+				border-bottom: 3px solid #00d000;
+			}
+			div.straw {
+				color: red;
+				border-top: 2px solid #ff94ad;
+				border-bottom: 70px solid #ff91b3;	
+			}
+			div.straw h1{
+				color: red;
+				background-color: #fff2f5;
+				border-bottom: 3px solid #f75580;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="orange">
+			<h1>Orange</h1>
+			<img src="images/orange.png">
+			<!--이미지는 텍스트와 같이 뭔가를 감싸는 것이 아니라 컨텐츠 그 자체다 그래서 닫는 태그가 없다.-->
+			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo</p>
+		</div>
+		
+		<!-- headline의 약자 제목 1~6까지 
+		<h2>Orange</h2> Orange라는 글자의 디자인을 바꾸기 위한 태그가 아니다 
+		<h3>Orange</h3> h라는 태그는 기능의 구분이다
+		<h4>Orange</h4>
+		<h5>Orange</h5>
+		<h6 style="font-size:100px; color:orange;">Orange</h6>
+		얘가 아무리 크고 디자인이 이뻐서 최상위 제목인 것 같지만 엔진은 h1을 최상위로 인지한다. 
+		태그는 디자인이 아니라 구분하기 위해 쓰는 것이다. 
+		-->
+		
+		<div class="kiwi">
+			<h1>Kiwi</h1>
+			<img src="images/kiwi.png">
+			<!--이미지는 텍스트와 같이 뭔가를 감싸는 것이 아니라 컨텐츠 그 자체다 그래서 닫는 태그가 없다.-->
+			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo</p>
+		</div>
+		
+		<div class="straw">
+			<h1>Strawberry</h1>
+			<img src="images/straw.png">
+			<!--이미지는 텍스트와 같이 뭔가를 감싸는 것이 아니라 컨텐츠 그 자체다 그래서 닫는 태그가 없다.-->
+			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo</p>
+		</div>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
