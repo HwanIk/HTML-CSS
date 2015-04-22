@@ -1,0 +1,94 @@
+/* 1. div의 전체 틀을 잡는다.*/
+/* 2. 내용물을 쓰고 헤더의 배경을 잡은 후 어느 정도의 레이아웃 크기를 잡아둔다*/
+/* 3. 각 속성을 꾸며준다. */
+/* 4. 하위 div들을 제어한다.*/
+
+
+/* CSS Reset start : 브라우저가 제공하는 css의 불필요한 옵션들을 제공하는 부분 */
+ul, h1, h2{
+	margin: 0;
+	padding: 0;
+}
+li{
+	list-style-type: none;
+}
+/* CSS Reset end*/
+
+/* Custom CSS*/
+body{
+	background-color: #333;
+}
+.wrapper{
+	background-color: #ddd; 	/* #ddd 밝은 회색톤이다 */
+	width: 800px;
+	margin: 50px auto;  		/* 상하 좌우의 여백 설정 */
+	border-radius: 20px;
+	overflow: hidden;			/* 자식이 넘쳐흐르는 것에 대해서 overflow를 감춰준다. */
+}
+.header{
+	background-image: url(images/bg1.jpg);
+	height: 350px;
+	color: #ffffff;
+	text-align: center;			/* 이미지 또한 텍스트와 같은 컨텐츠이기 때문에 가운데 정렬이 된다. */
+}
+
+/* 자식 선택자, header안에 있는 이미지만 제어할 수 있게끔 해준다.*/
+/* img라고만 쓰면 코드가 길어질 경우 어디에 해당되는 img인지 알기가 어렵다. 그렇기 때문에 markup순서대로 코딩해주는 것이 굉장히 중요하다.*/
+.header img{
+	border: 5px solid #ffffff;
+	border-radius: 100%; 		/* 최대한 깎을 수 있을만큼 깎아라!! -> 원이 된다. */
+	margin-top: 100px;
+}
+.header h1{
+	margin-top: 20px;
+}
+
+/* 자식 선택자를 쓰고 안 쓰고는 개발자의 역량이다. 잘 보일수도 있고 잘 안 보일수도 있기 때문에*/
+.section{
+	background-color: #ffffff;
+	margin: 30px;				/* section의 상하단 margin이 자동적으로 영역을 겹치게 해준다. 다를 경우 큰 값으로 편중된다. */
+	padding: 20px;
+	width: auto;				/* width:100%와 auto는 다른 개념이다. */ 
+	background-image: url(images/icon-info.png);
+	background-repeat: no-repeat;
+/*	이미지 배치하는 상황 첫번째 값 : 가로기준 , 두번째 값 : 세로기준 */
+	background-position: right center;
+/*	픽셀 값도 가능하다.*/
+/*	background-position: 20px 40px;*/
+/*	오른쪽 기준에서 20px 위쪽 기준에서 20px만큼 떨어 뜨려서 정렬시킨다.*/
+/*	background-position: right 20px top 20px;*/
+	border-radius: 20px;
+}
+/*.	★★★ section .skill로 띄어서 쓰면 안된다!!!! 붙여서 써야 된다. 띄어서 쓰는 경우는 자식선택자일 때만!! ★★★ */
+/*	우선순위 태그.class > *.class > class(아래) > class(위) > 태그(아래) > 태그(위) -> 구체적일수록 우선순위가 높다 */
+.section.skill{
+	background-image: url(images/icon-skill.png);
+}
+.section h2{
+	color: #226f1f;
+	margin-bottom: 10px;
+}
+.section li{
+	padding: 5px 20px;
+	border-left: 5px solid #ddd;
+	color: #6a6a6a;
+}
+/* hover(마우스 오버) : 가상선택자 혹은 가상클래스 띄어쓰기 할 경우 *:hover가 된다. */
+.section li:hover{
+	width: 200px;
+	border-left-color: #05b705;
+	background-color: #eef5ea;
+	color: #004a00;
+}
+.footer{
+	background-color: #efefef;	/* 밝은 회색 */
+	text-align: center;
+	padding: 20px;
+	color: #999;
+}
+
+/*id와 class의 차이*/
+/*class는 여러요소에 들어갈 수 있지만 id는 유일한 이름이다. 전체 페이지에서 같은 이름의 id가 한번밖에 들어갈 수 밖에 없다.
+  class보다 id가 우선순위가 높다. 잘 사용하지 않는다. 단 하나밖에 사용할 수 밖에 없기 때문에 */
+
+
